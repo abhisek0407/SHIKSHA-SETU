@@ -182,6 +182,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <footer>
+        <div className="footer1">@2025 Shiksha Setu. All rights reserved.</div>
+      </footer>
     </div>
   );
 };

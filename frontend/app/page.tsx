@@ -32,6 +32,16 @@ const faqItems = [
     answer:
       "You can ask any doubts in our Doubt box section, where interested faculties or students can answer your doubt.",
   },
+  {
+    question: " Can I find scholarships here?",
+    answer:
+      "Yes! The website lists all scholarships available for CHSE students with direct apply links.",
+  },
+    {
+    question: "  Can I use this website on my phone?",
+    answer:
+      "Yes! The website is mobile-friendly and works smoothly on all smartphones."
+  },
 ];
 
 const Home: React.FC = () => {
