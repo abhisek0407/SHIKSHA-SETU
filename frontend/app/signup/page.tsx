@@ -38,7 +38,7 @@ const Signup: React.FC = () => {
             body: JSON.stringify(data),
         })
 
-        let res = await response.json()
+        const res = await response.json()
         if (!response.ok) {
             setmsg(res.msg);
             return;

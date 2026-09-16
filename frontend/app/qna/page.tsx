@@ -25,8 +25,8 @@ const QnAPage: React.FC = () => {
       if (!res.ok) throw new Error(await res.text());
       const data = await res.json();
       setQuestions(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load questions");
     } finally {
       setLoading(false);
     }
@@ -40,8 +40,8 @@ const QnAPage: React.FC = () => {
       });
       if (!res.ok) throw new Error(await res.text());
       setQuestions(questions.filter((q) => q._id !== id));
-    } catch (err: any) {
-      alert(err.message);
+    } catch (err) {
+       alert(err instanceof Error ? err.message : "Failed to delete question");
     }
   };
 

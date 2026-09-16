@@ -27,8 +27,8 @@ const AskPage: React.FC = () => {
       }
 
       router.push("/qna");
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to post question");
     }
   };
 

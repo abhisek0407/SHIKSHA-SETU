@@ -29,8 +29,8 @@ const ProfilePage: React.FC = () => {
 
         const data = await res.json();
         setUser(data);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to load profile");
       } finally {
         setLoading(false);
       }

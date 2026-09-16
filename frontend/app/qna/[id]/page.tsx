@@ -35,8 +35,8 @@ const QuestionPage: React.FC = () => {
       if (!res.ok) throw new Error(await res.text());
       const data = await res.json();
       setQuestion(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -51,8 +51,8 @@ const QuestionPage: React.FC = () => {
       if (!res.ok) throw new Error(await res.text());
       alert("Question deleted successfully");
       router.push("/qna");
-    } catch (err: any) {
-      alert(err.message);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Something went wrong");
     }
   };
 
@@ -67,8 +67,8 @@ const QuestionPage: React.FC = () => {
         ...question!,
         answers: question!.answers.filter((a) => a._id !== answerId),
       });
-    } catch (err: any) {
-      alert(err.message);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Something went wrong");
     }
   };
 
@@ -85,8 +85,8 @@ const QuestionPage: React.FC = () => {
       const updated = await res.json();
       setQuestion(updated);
       setAnswerText("");
-    } catch (err: any) {
-      alert(err.message);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Something went wrong");
     }
   };
 
