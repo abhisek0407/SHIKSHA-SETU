@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import styles from "./QnA.module.css";
+import styles from "./qna.module.css";
 import { API_BASE_URL } from "../lib/api";
 
 type Question = {
