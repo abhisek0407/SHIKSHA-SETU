@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import LogoPic from '@/public/logo-hackodisha.png';
-// @ts-expect-error The stylesheet is loaded by the Next.js bundler at runtime.
 import "./navbar.css";
 import { useRouter } from 'next/navigation';
 
