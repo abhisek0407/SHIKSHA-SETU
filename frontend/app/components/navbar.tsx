@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
     return (
         <>
-            <header>
+            <header className="siteHeader">
                 <nav>
                     <div className="webLogo" style={{ display: "flex" }}>
                         <Image

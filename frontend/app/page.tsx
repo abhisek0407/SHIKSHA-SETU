@@ -140,7 +140,7 @@ const Home: React.FC = () => {
             href: "/qna",
           },
         ].map((card, idx) => (
-          <div className={styles.card} key={idx} style={{ width: "18rem" }}>
+          <div className={styles.card} key={idx}>
             <Image src={card.img} alt={card.title} className="card-img-top" style={{ width: "100%", height: "auto", borderRadius: "10px" }}/>
             <div className="card-body" style={{display:"flex", flexDirection:"column", gap:'1rem'}}>
               <h3 className="card-title">{card.title}</h3>
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
           <button>Back to Top</button>
         </div>
         <div className={styles.footer1}>
-          @2025 Shiksha Setu. All rights reserved.
+          @2026 Shiksha Setu. All rights reserved.
         </div>
       </footer>
     </>

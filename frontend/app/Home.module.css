@@ -95,7 +95,9 @@
   }
   
   .card {
-    flex: 0 1 15rem;  
+    flex: 0 1 15rem;
+    max-width: 18rem;
+    width: 100%;
     margin-bottom: 2rem;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
@@ -129,6 +131,15 @@
   @keyframes floatBtn { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
   
   /* Responsive */
-  @media (max-width: 768px) { .carouselImg { height: 300px; } }
-  @media (max-width: 480px) { .carouselImg { height: 200px; } }
-  
+  @media (max-width: 768px) {
+    .carouselInner { height: 300px; }
+    .carouselImg { height: 300px; }
+    .cardCont { padding: 2rem 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    .carouselInner { height: 200px; }
+    .carouselImg { height: 200px; }
+    .carouselPrev, .carouselNext { width: 2.2rem; height: 2.2rem; font-size: 1.4rem; }
+    .cardCont { padding: 1.5rem 1rem; gap: 1.25rem; }
+    .card { max-width: 100%; }
+  }

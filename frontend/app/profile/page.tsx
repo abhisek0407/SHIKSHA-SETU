@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../lib/api";
+import "./profile.css";
 
 type User = {
   username: string;
@@ -37,21 +38,30 @@ const ProfilePage: React.FC = () => {
     };
 
     fetchProfile();
-  }, []);
-
-  if (loading) return <p>Loading profile...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  }, [router]);
 
   return (
     <div className="profileBody">
       <h2>Profile</h2>
-      {user ? (
-        <div>
-          <div>Username: {user.username}</div>
-          <div>Email: {user.email}</div>
+      {loading && <p>Loading profile...</p>}
+      {!loading && error && <p className="profileError">{error}</p>}
+      {!loading && !error && (
+        <div className="profileCard">
+          {user ? (
+            <>
+              <div className="profileRow">
+                <span className="profileLabel">Username</span>
+                <span className="profileValue">{user.username}</span>
+              </div>
+              <div className="profileRow">
+                <span className="profileLabel">Email</span>
+                <span className="profileValue">{user.email}</span>
+              </div>
+            </>
+          ) : (
+            <p>No user data found</p>
+          )}
         </div>
-      ) : (
-        <p>No user data found</p>
       )}
     </div>
   );

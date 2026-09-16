@@ -1,27 +1,77 @@
 .profileBody {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a2e);
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    padding: 2rem 1rem;
 }
 
-.profileFormBody {
-    border: 2px solid white;
-    width: 20vw;
-    height: 55vh;
+.profileBody h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00aaff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.profileCard {
+    background-color: rgba(20, 20, 40, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    width: 350px;
+    max-width: 90%;
+    padding: 2rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
-.profileFormBody input {
-    width: 18vw;
+.profileRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.profileFormBody p {
-    color: red;
+.profileLabel {
+    color: #8fb8d6;
+    font-weight: 600;
+}
+
+.profileValue {
+    color: #e0e0e0;
+    word-break: break-word;
+    text-align: right;
+}
+
+.profileError {
+    color: #ff6b6b;
+}
+
+@media (max-width: 480px) {
+    .profileCard {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .profileBody h2 {
+        font-size: 2rem;
+    }
+
+    .profileRow {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .profileValue {
+        text-align: left;
+    }
 }

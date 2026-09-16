@@ -19,7 +19,7 @@
   --signinBtn: #00aaff;
 }
 
-header {
+.siteHeader {
   position: sticky;
   top: 0;
   z-index: 200;
